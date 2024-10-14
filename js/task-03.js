@@ -13,16 +13,15 @@ const images = [
   },
 ];
 
+// Select the <ul> element with the class 'gallery'
 const ulGallery = document.querySelector("ul.gallery");
-
 
 let galleryHTML = "";
 
-
+// Iterate through each image and construct the HTML
 images.forEach(image => {
-
-  galleryHTML += <li><img src="${image.url}" alt="${image.alt}"></li>;
+  galleryHTML += `<li><img src="${image.url}" alt="${image.alt}"></li>`;
 });
 
-
+// Insert the constructed HTML into the <ul> element in one operation
 ulGallery.insertAdjacentHTML("beforeend", galleryHTML);

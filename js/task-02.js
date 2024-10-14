@@ -8,12 +8,16 @@ const ingredients = [
   "Condiments",
 ];
 
+// Select the ingredients list
+const ingredientsList = document.getElementById('ingredients');
 
-const ulIngredients = document.getElementById("ingredients");
-
-ingredients.forEach(ingredient => {
-  const li = document.createElement("li");
-  li.textContent = ingredient;
-  li.classList.add("item");
-  ulIngredients.appendChild(li);
+// Create an array of <li> elements
+const ingredientElements = ingredients.map(ingredient => {
+  const listItem = document.createElement('li'); // Create <li> element
+  listItem.textContent = ingredient; // Set its text content
+  listItem.classList.add('item'); // Add the 'item' class
+  return listItem; // Return the <li> element
 });
+
+// Append all <li> elements to the <ul> in a single operation
+ingredientsList.append(...ingredientElements);
